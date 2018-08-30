@@ -8,6 +8,16 @@ namespace Calculator
 {
     public class Calculator
     {
+        // Accumulator which stores the result of the previous calculation.
+        // Default value is 0.
+        public double Accumulator { get; private set; } = 0;
+
+        // Clears the accumulator to 0
+        public void Clear()
+        {
+            Accumulator = 0;
+        }
+
         // Addition
         public double Add(double a, double b)
         {
