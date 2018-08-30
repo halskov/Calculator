@@ -31,5 +31,37 @@ namespace Calculator
         {
             return Math.Pow(x, exp);
         }
+
+
+        public double Add(double addend)
+        {
+            return addend + Accumulator;
+        }
+
+        public double Subtract(double subtractor)
+        {
+            return subtractor - Accumulator;
+        }
+
+        public double Multiply(double multiplier)
+        {
+            return multiplier * Accumulator;
+        }
+
+        public double Divide(double divisor)
+        {
+            if (Accumulator == 0)
+            {
+                DivideByZeroException ex = new DivideByZeroException();
+                throw ex;
+            }
+            return divisor / Accumulator;
+        }
+
+        public double Power(double exponent)
+        {
+            return Math.Pow(exponent, Accumulator);
+        }
     }
+
 }
