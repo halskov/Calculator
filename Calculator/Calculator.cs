@@ -31,5 +31,16 @@ namespace Calculator
         {
             return Math.Pow(x, exp);
         }
+
+        //Division
+        public double Divide(double a, double b)
+        {
+            if (b == 0)
+            {
+                DivideByZeroException ex = new DivideByZeroException();
+                throw ex;
+            }
+            return a / b;
+        }
     }
 }
