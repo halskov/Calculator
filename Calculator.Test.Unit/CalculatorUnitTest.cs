@@ -39,5 +39,23 @@ namespace Calculator.Test.Unit
             var uut = new Calculator();
             Assert.That(() => uut.Divide(2,0),Throws.TypeOf<DivideByZeroException>());
         }
+
+
+        [TestCase(4, 2)]
+        [TestCase(6, 2.4494897427831779)]
+        [TestCase(2.5, 1.5811388300841898)]
+        public void Sqrt_Test(double a, double result)
+        {
+            var uut = new Calculator();
+            Assert.That(uut.Sqrt(a), Is.EqualTo(result));
+        }
+
+        [Test]
+        public void Sqrt_TestException()
+        {
+            var uut = new Calculator();
+            Assert.That(() => uut.Sqrt(-4), Throws.TypeOf<ArithmeticException>());
+        }
+
     }
 }

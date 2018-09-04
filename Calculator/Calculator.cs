@@ -85,6 +85,24 @@ namespace Calculator
         {
             return Divide(Accumulator, divisor);
         }
+
+        public double Sqrt(double a)
+        {
+            if (a < 0)
+            {
+                ArithmeticException ex = new ArithmeticException("Cannot take sqaure root of negative number.");
+                throw ex;
+            }
+            else
+            {
+                return Math.Sqrt(a);
+            }
+        }
+
+        public double Sqrt()
+        {
+            return Sqrt(Accumulator);
+        }
  
     }
 
