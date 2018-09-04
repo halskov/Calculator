@@ -1,0 +1,12 @@
+Hand-in 1 - Jenkins Kørekort
+
+Gruppe: Team #2
+- Jakob Halskov Stevnsner (201509478)
+- Jakob Wilbrandt ()
+- Nanna Friis-Nielsen (201507456)
+
+Jenkins Job:
+http://ci3.ase.au.dk:8080/job/Team2CalculatorTest/
+
+Github:
+https://github.com/halskov/Calculator
