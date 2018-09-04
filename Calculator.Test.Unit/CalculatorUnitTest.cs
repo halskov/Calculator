@@ -62,6 +62,20 @@ namespace Calculator.Test.Unit
         }
 
         /*
+         * Subtraction Overload
+         */
+        [TestCase(2, 2, 2, -2)]
+        [TestCase(10, 0, 1, 9)]
+        [TestCase(-10, -6, -6, 2)]
+        [TestCase(-10, 3, -3, -10)]
+        public void Subtract_Overload_Test(double a, double b, double c, double result)
+        {
+            var uut = new Calculator();
+            uut.Subtract(a, b);
+            Assert.That(uut.Subtract(c), Is.EqualTo(result));
+        }
+
+        /*
          * Multiplication
          */
         [TestCase(2, 4, 8.0)]
@@ -71,6 +85,19 @@ namespace Calculator.Test.Unit
         {
             var uut = new Calculator();
             Assert.That(uut.Multiply(a, b), Is.EqualTo(result));
+        }
+
+        /*
+         * Multiplication Overload
+         */
+        [TestCase(2, 4, 2, 16.0)]
+        [TestCase(0.5, 150, -1, -75.0)]
+        [TestCase(-10, 5, -50.0, 2500)]
+        public void Multiply_Overload_Test(double a, double b, double c, double result)
+        {
+            var uut = new Calculator();
+            uut.Multiply(a, b);
+            Assert.That(uut.Multiply(c), Is.EqualTo(result));
         }
 
         /*
