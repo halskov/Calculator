@@ -98,6 +98,10 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Factorial(a), Is.EqualTo(result));
         }
 
+
+        /*
+         * Sqarte Root
+         */
         [TestCase(4, 2)]
         [TestCase(6, 2.4494897427831779)]
         [TestCase(2.5, 1.5811388300841898)]
