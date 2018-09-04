@@ -21,34 +21,34 @@ namespace Calculator
         // Addition
         public double Add(double a, double b)
         {
-            return a + b;
+            return Accumulator = a + b;
         }
 
         public double Add(double addend)
         {
-            return addend + Accumulator;
+            return Add(addend, Accumulator);
         }
 
         // Subtraction
         public double Subtract(double a, double b)
         {
-            return a - b;
+            return Accumulator = a - b;
         }
 
         public double Subtract(double subtractor)
         {
-            return Accumulator - subtractor;
+            return Subtract(Accumulator, subtractor);
         }
 
         // Multiplication
         public double Multiply(double a, double b)
         {
-            return a * b;
+            return Accumulator = a * b;
         }
 
         public double Multiply(double multiplier)
         {
-            return multiplier * Accumulator;
+            return Multiply(multiplier, Accumulator);
         }
 
         // Power
@@ -61,7 +61,7 @@ namespace Calculator
             }
             else
             {
-                return Math.Pow(x, exp);
+                return Accumulator = Math.Pow(x, exp);
             }
         }
 
@@ -82,6 +82,8 @@ namespace Calculator
                     result *= number;
                     number--;
                 }
+
+                Accumulator = result;
                 return result;
             }
             else
@@ -104,7 +106,7 @@ namespace Calculator
                 DivideByZeroException ex = new DivideByZeroException();
                 throw ex;
             }
-            return a / b;
+            return Accumulator = a / b;
         }
 
         public double Divide(double divisor)
@@ -112,6 +114,7 @@ namespace Calculator
             return Divide(Accumulator, divisor);
         }
 
+        // Sqarte Root
         public double Sqrt(double a)
         {
             if (a < 0)
@@ -121,7 +124,7 @@ namespace Calculator
             }
             else
             {
-                return Math.Sqrt(a);
+                return Accumulator = Math.Sqrt(a);
             }
         }
 

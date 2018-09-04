@@ -72,6 +72,9 @@ namespace Calculator.Test.Unit
         }
 
 
+        /*
+         * Sqarte Root
+         */
         [TestCase(4, 2)]
         [TestCase(6, 2.4494897427831779)]
         [TestCase(2.5, 1.5811388300841898)]
