@@ -46,6 +46,18 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Multiply(a, b), Is.EqualTo(result));
         }
 
+        /*
+         * Power
+         */
+        [TestCase(2, 4, 16.0)]
+        [TestCase(-2, 3, -8)]
+        [TestCase(2, -2, 0.25)]
+        public void Power_Test(double a, double b, double result)
+        {
+            var uut = new Calculator();
+            Assert.That(uut.Power(a, b), Is.EqualTo(result));
+        }
+
         [TestCase(2, 2)]
         [TestCase(3, 6)]
         [TestCase(7, 5040)]
