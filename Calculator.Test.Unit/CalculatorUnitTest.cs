@@ -199,6 +199,16 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Sqrt(a), Is.EqualTo(result));
         }
 
+        [TestCase(4, 2)]
+        [TestCase(6, 2.4494897427831779)]
+        [TestCase(2.5, 1.5811388300841898)]
+        public void Sqrt_Overload_Test(double a, double result)
+        {
+            var uut = new Calculator();
+            uut.Add(a);
+            Assert.That(uut.Sqrt(), Is.EqualTo(result));
+        }
+
         [TestCase(-4)]
         [TestCase(-10.17)]
         public void Sqrt_Test_Exception(double a)
@@ -206,6 +216,7 @@ namespace Calculator.Test.Unit
             var uut = new Calculator();
             Assert.That(() => uut.Sqrt(a), Throws.TypeOf<ArithmeticException>());
         }
+
 
     }
 }
