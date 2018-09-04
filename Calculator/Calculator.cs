@@ -60,7 +60,7 @@ namespace Calculator
 
         public double Subtract(double subtractor)
         {
-            return subtractor - Accumulator;
+            return  Accumulator - subtractor;
         }
 
         public double Multiply(double multiplier)
@@ -70,17 +70,17 @@ namespace Calculator
 
         public double Divide(double divisor)
         {
-            if (Accumulator == 0)
+            if (divisor == 0)
             {
                 DivideByZeroException ex = new DivideByZeroException();
                 throw ex;
             }
-            return divisor / Accumulator;
+            return  Accumulator / divisor;
         }
 
         public double Power(double exponent)
         {
-            return Math.Pow(exponent, Accumulator);
+            return Math.Pow(Accumulator, exponent);
         }
     }
 
