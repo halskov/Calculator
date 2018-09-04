@@ -39,7 +39,15 @@ namespace Calculator
         // Power
         public double Power(double x, double exp)
         {
-            return Math.Pow(x, exp);
+            if (x < 0 && exp != Math.Floor(exp))
+            {
+                ArithmeticException ex = new ArithmeticException("Cannot raise a negative number to a fractional exponent.");
+                throw ex;
+            }
+            else
+            {
+                return Math.Pow(x, exp);
+            }
         }
 
         //Division
@@ -80,7 +88,7 @@ namespace Calculator
 
         public double Power(double exponent)
         {
-            return Math.Pow(Accumulator, exponent);
+            return Power(Accumulator, exponent);
         }
     }
 

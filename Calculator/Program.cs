@@ -13,8 +13,8 @@ namespace Calculator
 
             System.Console.WriteLine("Calculator test application");
 
-            double a = 7;
-            double b = 4;
+            double a = 100;
+            double b = 5.000000000001;
 
             Calculator calc = new Calculator();
 
