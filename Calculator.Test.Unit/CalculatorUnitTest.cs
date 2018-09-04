@@ -34,6 +34,18 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Subtract(a, b), Is.EqualTo(result));
         }
 
+        /*
+         * Multiplication
+         */
+        [TestCase(2, 4, 8.0)]
+        [TestCase(0.5, 150, 75.0)]
+        [TestCase(-10, 5, -50.0)]
+        public void Multiply_Test(double a, double b, double result)
+        {
+            var uut = new Calculator();
+            Assert.That(uut.Multiply(a, b), Is.EqualTo(result));
+        }
+
         [TestCase(2, 2)]
         [TestCase(3, 6)]
         [TestCase(7, 5040)]
