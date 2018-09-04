@@ -23,6 +23,20 @@ namespace Calculator.Test.Unit
         }
 
         /*
+         * Addition Overload
+         */
+        [TestCase(2, 4, 2, 8)]
+        [TestCase(-10, 4, 2, -4)]
+        [TestCase(-10, 2, -4, -12)]
+        public void Add_Overload_Test(double a, double b, double c, double result)
+        {
+            var uut = new Calculator();
+            uut.Clear();
+            uut.Add(a, b);
+            Assert.That(uut.Add(c), Is.EqualTo(result));
+        }
+
+        /*
          * Subtraction
          */
         [TestCase(2, 4, -2)]
