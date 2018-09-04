@@ -74,7 +74,7 @@ namespace Calculator
         public double Factorial(double number)
         {
             // Check if integer
-            if ((number % 1) == 0)
+            if ((number % 1) == 0 && number > 0)
             {
                 double result = 1;
                 while ((int)number != 1)
@@ -88,7 +88,7 @@ namespace Calculator
             }
             else
             {
-                ArithmeticException ex = new ArithmeticException("Cannot do factorial of non-integer number");
+                ArithmeticException ex = new ArithmeticException("Cannot do factorial of negative or non-integer number");
                 throw ex;
             }
         }

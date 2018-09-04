@@ -61,6 +61,27 @@ namespace Calculator.Test.Unit
         }
 
         /*
+         * Division
+         */
+        [TestCase(2, 4, 0.5)]
+        [TestCase(0.5, -0.5, -1.0)]
+        [TestCase(-200, -10, 20.0)]
+        public void Divide_Test(double a, double b, double result)
+        {
+            var uut = new Calculator();
+            Assert.That(uut.Divide(a, b), Is.EqualTo(result));
+        }
+
+        [TestCase(2, 0)]
+        [TestCase(-100, 0)]
+        [TestCase(0, 0)]
+        public void Divide_Test_DivideByZeroException(double a, double b)
+        {
+            var uut = new Calculator();
+            Assert.That(() => uut.Divide(a, b), Throws.TypeOf<DivideByZeroException>());
+        }
+
+        /*
          * Power
          */
         [TestCase(2, 4, 16.0)]
@@ -72,6 +93,16 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Power(a, b), Is.EqualTo(result));
         }
 
+        [TestCase(-2, 0.25)]
+        public void Power_Test_Exception(double a, double b)
+        {
+            var uut = new Calculator();
+            Assert.That(() => uut.Power(a,b), Throws.TypeOf<ArithmeticException>());
+        }
+
+        /*
+         * Factorial
+         */
         [TestCase(2, 2)]
         [TestCase(3, 6)]
         [TestCase(7, 5040)]
@@ -81,25 +112,17 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Factorial(a), Is.EqualTo(result));
         }
 
-
-
-        [Test]
-        public void Divide_Divide4by2_Return2()
+        [TestCase(10.17)]
+        [TestCase(-14)]
+        public void Factorial_Test_Exception(double a)
         {
             var uut = new Calculator();
-            Assert.That(uut.Divide(4, 2), Is.EqualTo(2));
-        }
-
-        [Test]
-        public void DivideByZeroException()
-        {
-            var uut = new Calculator();
-            Assert.That(() => uut.Divide(2,0),Throws.TypeOf<DivideByZeroException>());
+            Assert.That(() => uut.Factorial(a), Throws.TypeOf<ArithmeticException>());
         }
 
 
         /*
-         * Sqarte Root
+         * Square Root
          */
         [TestCase(4, 2)]
         [TestCase(6, 2.4494897427831779)]
@@ -110,11 +133,12 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Sqrt(a), Is.EqualTo(result));
         }
 
-        [Test]
-        public void Sqrt_TestException()
+        [TestCase(-4)]
+        [TestCase(-10.17)]
+        public void Sqrt_Test_Exception(double a)
         {
             var uut = new Calculator();
-            Assert.That(() => uut.Sqrt(-4), Throws.TypeOf<ArithmeticException>());
+            Assert.That(() => uut.Sqrt(a), Throws.TypeOf<ArithmeticException>());
         }
 
     }
