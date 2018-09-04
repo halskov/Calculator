@@ -152,6 +152,16 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Factorial(a), Is.EqualTo(result));
         }
 
+        [TestCase(2, 2)]
+        [TestCase(3, 6)]
+        [TestCase(7, 5040)]
+        public void Factorial_Overload_Test(double a, double result)
+        {
+            var uut = new Calculator();
+            uut.Add(a);
+            Assert.That(uut.Factorial(), Is.EqualTo(result));
+        }
+
         [TestCase(10.17)]
         [TestCase(-14)]
         public void Factorial_Test_Exception(double a)
