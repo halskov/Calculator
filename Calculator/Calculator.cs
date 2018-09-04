@@ -70,6 +70,32 @@ namespace Calculator
             return Power(Accumulator, exponent);
         }
 
+        // Factorial
+        public double Factorial(double number)
+        {
+            // Check if integer
+            if ((number % 1) == 0)
+            {
+                double result = 1;
+                while ((int)number != 1)
+                {
+                    result *= number;
+                    number--;
+                }
+                return result;
+            }
+            else
+            {
+                ArithmeticException ex = new ArithmeticException("Cannot do factorial of non-integer number");
+                throw ex;
+            }
+        }
+
+        public double Factorial()
+        {
+            return Factorial(Accumulator);
+        }
+
         //Division
         public double Divide(double a, double b)
         {
