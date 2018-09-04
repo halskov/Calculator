@@ -24,16 +24,31 @@ namespace Calculator
             return a + b;
         }
 
+        public double Add(double addend)
+        {
+            return addend + Accumulator;
+        }
+
         // Subtraction
         public double Subtract(double a, double b)
         {
             return a - b;
         }
 
+        public double Subtract(double subtractor)
+        {
+            return Accumulator - subtractor;
+        }
+
         // Multiplication
         public double Multiply(double a, double b)
         {
             return a * b;
+        }
+
+        public double Multiply(double multiplier)
+        {
+            return multiplier * Accumulator;
         }
 
         // Power
@@ -50,6 +65,11 @@ namespace Calculator
             }
         }
 
+        public double Power(double exponent)
+        {
+            return Power(Accumulator, exponent);
+        }
+
         //Division
         public double Divide(double a, double b)
         {
@@ -61,30 +81,11 @@ namespace Calculator
             return a / b;
         }
 
-        public double Add(double addend)
-        {
-            return addend + Accumulator;
-        }
-
-        public double Subtract(double subtractor)
-        {
-            return  Accumulator - subtractor;
-        }
-
-        public double Multiply(double multiplier)
-        {
-            return multiplier * Accumulator;
-        }
-
         public double Divide(double divisor)
         {
             return Divide(Accumulator, divisor);
         }
-
-        public double Power(double exponent)
-        {
-            return Power(Accumulator, exponent);
-        }
+ 
     }
 
 }
