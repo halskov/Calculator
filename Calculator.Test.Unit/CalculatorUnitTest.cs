@@ -13,7 +13,6 @@ namespace Calculator.Test.Unit
         [TestCase(2, 4, 6)]
         [TestCase(-10, 6, -4)]
         [TestCase(-10, -12, -22)]
-        [TestCase(0, -2, 1000)]
         public void AddNumbers(double a, double b, double result)
         {
             var uut = new Calculator();
