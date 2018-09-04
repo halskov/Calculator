@@ -98,9 +98,17 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Factorial(a), Is.EqualTo(result));
         }
 
+        [TestCase(10.17)]
+        [TestCase(-14)]
+        public void Factorial_Test_Exception(double a)
+        {
+            var uut = new Calculator();
+            Assert.That(() => uut.Factorial(a), Throws.TypeOf<ArithmeticException>());
+        }
+
 
         /*
-         * Sqarte Root
+         * Square Root
          */
         [TestCase(4, 2)]
         [TestCase(6, 2.4494897427831779)]
@@ -111,11 +119,12 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Sqrt(a), Is.EqualTo(result));
         }
 
-        [Test]
-        public void Sqrt_TestException()
+        [TestCase(-4)]
+        [TestCase(-10.17)]
+        public void Sqrt_Test_Exception(double a)
         {
             var uut = new Calculator();
-            Assert.That(() => uut.Sqrt(-4), Throws.TypeOf<ArithmeticException>());
+            Assert.That(() => uut.Sqrt(a), Throws.TypeOf<ArithmeticException>());
         }
 
     }
