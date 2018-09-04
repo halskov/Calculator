@@ -11,6 +11,19 @@ namespace Calculator.Test.Unit
     public class CalculatorUnitTest
     {
         /*
+         * Clear accumulator
+         */
+        [TestCase(2, 4, 6)]
+        public void Clear_Test(double a, double b, double result)
+        {
+            var uut = new Calculator();
+            uut.Add(a);
+            uut.Clear();
+            uut.Add(a);
+            Assert.That(uut.Add(b), Is.EqualTo(result));
+        }
+
+        /*
          * Addition
          */
         [TestCase(2, 4, 6)]
