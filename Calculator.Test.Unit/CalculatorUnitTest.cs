@@ -24,5 +24,19 @@ namespace Calculator.Test.Unit
             var uut = new Calculator();
             Assert.That(uut.Add(-2, 4), Is.EqualTo(2));
         }
+
+        [Test]
+        public void Divide_Divide4by2_Return2()
+        {
+            var uut = new Calculator();
+            Assert.That(uut.Divide(4, 2), Is.EqualTo(2));
+        }
+
+        [Test]
+        public void DivideByZeroException()
+        {
+            var uut = new Calculator();
+            Assert.That(() => uut.Divide(2,0),Throws.TypeOf<DivideByZeroException>());
+        }
     }
 }
