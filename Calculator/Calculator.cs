@@ -78,12 +78,7 @@ namespace Calculator
 
         public double Divide(double divisor)
         {
-            if (divisor == 0)
-            {
-                DivideByZeroException ex = new DivideByZeroException();
-                throw ex;
-            }
-            return  Accumulator / divisor;
+            return Divide(Accumulator, divisor);
         }
 
         public double Power(double exponent)
