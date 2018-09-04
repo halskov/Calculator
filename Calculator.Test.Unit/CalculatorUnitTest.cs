@@ -11,7 +11,7 @@ namespace Calculator.Test.Unit
     public class CalculatorUnitTest
     {
         /*
-         * Addition Overload
+         * Clear accumulator
          */
         [TestCase(2, 4, 6)]
         public void Clear_Test(double a, double b, double result)
