@@ -10,7 +10,7 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-
+            /*
             System.Console.WriteLine("Calculator test application");
 
             double a = 5;
@@ -36,7 +36,7 @@ namespace Calculator
 
 
             System.Console.WriteLine($"Factorial of {a} equals {fac}");
-
+            */
 
         }
     }
