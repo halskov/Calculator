@@ -112,6 +112,19 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Divide(a, b), Is.EqualTo(result));
         }
 
+        /*
+         * Division Overload
+         */
+        [TestCase(2, 4, 0.5)]
+        [TestCase(0.5, -0.5, -1.0)]
+        [TestCase(-200, -10, 20.0)]
+        public void Divide_Overload_Test(double a, double b, double result)
+        {
+            var uut = new Calculator();
+            uut.Add(a);
+            Assert.That(uut.Divide(b), Is.EqualTo(result));
+        }
+
         [TestCase(2, 0)]
         [TestCase(-100, 0)]
         [TestCase(0, 0)]
@@ -131,6 +144,19 @@ namespace Calculator.Test.Unit
         {
             var uut = new Calculator();
             Assert.That(uut.Power(a, b), Is.EqualTo(result));
+        }
+
+        /*
+         * Power Overload
+         */
+        [TestCase(2, 4, 16.0)]
+        [TestCase(-2, 3, -8)]
+        [TestCase(2, -2, 0.25)]
+        public void Power_Overload_Test(double a, double b, double result)
+        {
+            var uut = new Calculator();
+            uut.Add(a);
+            Assert.That(uut.Power(b), Is.EqualTo(result));
         }
 
         [TestCase(-2, 0.25)]
